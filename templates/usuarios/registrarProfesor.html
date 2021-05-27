@@ -1,0 +1,20 @@
+{%extends 'base_ingreso.html'%} {%load static%}
+
+{%block title%} {{registrarProfesor}}{%endblock%}</title>
+
+    {%block favicon%}
+    <link rel="shortcut icon" href="{% static 'master/img/turtle.ico'%}" />
+    {%endblock%}
+  </head>
+  <body>
+    {%block contenido%} 
+    <div id="inscripcion" class="container flex">
+      <h4>Registar Profesor</h4>
+        <form action="{% url 'registrarProfesor' %}" method="POST">
+          <div class="table">{%csrf_token%} {{formularioRegistroProfesor.as_ul}}</div>
+          <button class="btn btn-outline-secondary">Registar</button>
+        </form>
+    </div>
+    {%endblock%} {# contenido principal#}
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{%extends 'base_ingreso.html'%} {%load static%}
+
+{%block title%} {{Profesor}}{%endblock%}</title>
+
+    {%block favicon%}
+    <link rel="shortcut icon" href="{% static 'master/img/turtle.ico'%}" />
+    {%endblock%}
+  </head>
+  <body>
+    {%block contenido%} 
+    <div id="inscripcion" class="container flex">
+      <h4>bienvenido Profesor {{request.session.nombre}}</h4>
+      <ul>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'crearCurso' %}">Crear Curso</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'mostrarCurso' %}">Cursos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'mostrar' %}">mostrar</a>
+        </li>
+      </ul>
+    </div>
+    {%endblock%} {# contenido principal#}
+  </body>
+</html>

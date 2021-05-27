@@ -1,0 +1,49 @@
+{%extends 'base_ingreso.html'%} {%load static%}
+
+{%block title%} {{AdminCursos}}{%endblock%}</title>
+
+    {%block favicon%}
+    <link rel="shortcut icon" href="{% static 'master/img/turtle.ico'%}" />
+    {%endblock%}
+  </head>
+  <body>
+    {%block contenido%} 
+    <div id="cuerpo" class="container">
+        <h1>Cursos Activos</h1>
+        <br>
+        
+        
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">activo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">contador</th>
+              <th scope="col">Cupos</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for curso in cursosActivosTotales %}
+            <tr>
+              <th scope="row">{{curso.id}}</th>
+              <td>{{curso.activo}}</th>
+              <td>{{curso.nombre}}</td>
+              <td>{{curso.descripcion}}</td>
+              <td>{{curso.fecha}}</td>
+              <td>{{curso.contador}}</td>
+              <td>{{curso.capacidad}}</td>
+              <td><a href="{% url 'eliminarCurso' idCurso=curso.id %}">eliminar Curso</a></td>
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+      </div>
+
+      </div>
+    {%endblock%} {# contenido principal#}
+  </body>
+</html>

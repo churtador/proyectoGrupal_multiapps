@@ -1,0 +1,43 @@
+{%extends 'base_ingreso.html'%} {%load static%}
+
+{%block title%} {{misCursos}}{%endblock%}</title>
+
+    {%block favicon%}
+    <link rel="shortcut icon" href="{% static 'master/img/turtle.ico'%}" />
+    {%endblock%}
+  </head>
+  <body>
+    {%block contenido%} 
+
+    <h1>mis cursos</h1>
+    <h3>cursos en los que estoy inscrito</h3>
+        <br>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Curso</th>
+              <th scope="col">confirmado </th>
+              <th scope="col">fecha</th>
+              <th scope="col">ubicacion</th>
+              <th></th>
+              
+            </tr>
+          </thead>
+          <tbody>
+          {%for inscripcion in misCursos %}
+          <tr>
+            <td>{{inscripcion.taller.nombre}}</td>
+            <td>{{inscripcion.confirmado}}</td>
+            <td>{{inscripcion.taller.fecha}}</td>
+            <td>{{inscripcion.taller.ubicacion}}</td>
+            <th><a href="{% url 'eliminarInscripcion' idInscripcion=inscripcion.id %}">eliminar inscripcion</a></th>
+            
+          </tr>
+        {%endfor%}
+        </tbody>
+      </table>
+    </div>
+  {%endblock%} {# contenido principal#}
+
+  </body>
+</html>

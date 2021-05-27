@@ -1,0 +1,24 @@
+{%extends 'base_ingreso.html'%} {%load static%}
+
+{%block title%} {{crearCurso}}{%endblock%}</title>
+
+    {%block favicon%}
+    <link rel="shortcut icon" href="{% static 'master/img/turtle.ico'%}" />
+    {%endblock%}
+  </head>
+  <body>
+    {%block contenido%} 
+    <div id="crearCurso" class="container flex">
+      <h4>crear curso</h4>
+        <form action="{% url 'crearCurso' %}" method="POST">
+          <div class="table">{%csrf_token%} {{formularioCurso.as_ul}}</div>
+          <button class="btn btn-outline-secondary">CrearCurso</button>
+        </form>
+    </div>
+
+
+
+    
+    {%endblock%} {# contenido principal#}
+  </body>
+</html>

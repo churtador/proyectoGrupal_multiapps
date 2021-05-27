@@ -1,0 +1,40 @@
+{%extends 'base_ingreso.html'%} {%load static%} {%block title%} {{cursos}}{%endblock%}</title>
+
+{%block favicon%}
+<link rel="shortcut icon" href="{% static 'master/img/turtle.ico'%}" /> {%endblock%}
+</head>
+
+<body>
+    {%block contenido%}
+    <div id="cuerpo" class="container">
+        <h1>Curso: {{curso.nombre}}</h1>
+        <br>
+        <h5>Detalles:</h5>
+        <ul>
+            <li>{{curso.descripcion}}</li>
+            <li>{{curso.fecha}}</li>
+            <li>{{curso.ubicacion}}</li>
+        </ul>
+        <br> {% if access == 9 or access == 2 %}
+        <h5>Archivos:</h5>
+        <!-- agregar if de administrador -->
+        <form action="uploadFile/{{curso.id}}" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <input id="id_archivo" type="file" name="archivo">
+            <input class="btn btn-primary" type="submit" value="Subir">
+        </form>
+        {% endif %}
+        <br>
+        <div>
+            <h6>Todos los archivos a revisar:</h6>
+            {% for file in files %}
+            <!-- <p><a href="{{path}}/{{file.url}}">{{file}}</a></p>
+            <br>  -->
+            <p><a href="{{curso.id}}/download/{{file.url}}">{{file.name}}</a></p>
+            {% endfor %}
+        </div>
+    </div>
+    {%endblock%} {# contenido principal#}
+</body>
+
+</html>

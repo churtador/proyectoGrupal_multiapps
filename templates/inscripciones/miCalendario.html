@@ -1,0 +1,66 @@
+{%extends 'base_ingreso.html'%} {%load static%}
+
+{%block title%} {{misCursos}}{%endblock%}</title>
+
+    {%block favicon%}
+    <link rel="shortcut icon" href="{% static 'master/img/turtle.ico'%}" />
+    {%endblock%}
+  </head>
+  <body>
+    {%block contenido%} 
+
+    
+    <h2>mis actividades esta semana</h2>
+        <br>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Lunes</th>
+              <th scope="col">Martes </th>
+              <th scope="col">Miercoles</th>
+              <th scope="col">Jueves</th>
+              <th scope="col">Viernes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p>hola</p><ul>
+              {%for actividad in lunes%}
+              <li><h5>curso:{{actividad.taller.nombre}}</h5></li>
+                <li>lugar:{{actividad.taller.descripcion}}</li>
+                {%endfor%}
+              </ul></td>
+              <td><ul>
+                {%for actividad in martes %}
+                <li><h5>curso:{{actividad.taller.nombre}}</h5></li>
+                <li>lugar:{{actividad.taller.descripcion}}</li>
+                {%endfor%}
+              </ul></td>
+              <td><ul>
+                {%for actividad in miercoles %}
+                <li><h5>curso:{{actividad.taller.nombre}}</h5></li>
+                <li>lugar:{{actividad.taller.descripcion}}</li>
+                {%endfor%}
+              </ul></td>
+              <td><ul>
+                {%for actividad in jueves %}
+                <li><h5>curso:{{actividad.taller.nombre}}</h5></li>
+                <li>lugar:{{actividad.taller.descripcion}}</li>
+                {%endfor%}
+              </ul></td>
+              <td>
+                <p>hola</p><ul>
+                {%for actividad in viernes%}
+                <li><h5>curso:{{actividad.taller.nombre}}</h5></li>
+                <li>lugar:{{actividad.taller.descripcion}}</li>
+                {%endfor%}
+              </ul></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  {%endblock%} {# contenido principal#}
+
+  </body>
+</html>

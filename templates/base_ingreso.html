@@ -1,0 +1,63 @@
+{%extends 'base.html'%} {%load static%}
+
+{%block title%} {{Alumno}}{%endblock%}</title>
+
+    {%block favicon%}
+    <link rel="shortcut icon" href="{% static 'master/img/turtle.ico'%}" />
+    {%endblock%}
+  </head>
+  <body>
+    {%block menuHorizontal%} 
+
+   
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'discriminador' %}">Welcome (id:{{request.session.id}}){{request.session.nombre}}/acceso:{{request.session.acceso}}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'misCursos' %}">Mis Cursos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'crearCurso' %}">Crear Curso</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'mostrarCurso' %}">Cursos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'adminCurso' %}">adminCursos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'inscribirse' %}">inscribirse</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'mostrar' %}">inscritos Totales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'registrarProfesor' %}">registrarProfesor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'miCalendario' %}">mi calendario</a>
+            </li>
+          </ul>
+           
+              <a id="logout" class="nav-link active" href="{% url 'logout' %}"  aria-disabled="true">logout</a>
+           
+        </div>
+      </div>
+    </nav>
+
+    {%endblock%} 
+    {%block navegacion%}
+    <div id="publicidad">
+      <h3 id="textoPublicidad">espacio disponible para publicidad</h3>
+    </div> {%endblock%}
+    {# contenido principal#}
+  </body>
+</html>

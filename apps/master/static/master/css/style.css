@@ -1,0 +1,56 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+#conteiner {
+  background-color: #f2eadc;
+  padding: 20px;
+}
+#registro,
+#crearCurso,
+#inscripcion {
+  border: 2px solid #5b3924;
+  padding: 10px;
+  width: 400px;
+  box-shadow: 2px 2px 3px#eec170;
+  margin: 10px auto;
+}
+#registro,
+li {
+  list-style: none;
+}
+li h5 {
+  margin-left: -30px;
+}
+label {
+  width: 150px;
+}
+#logout {
+  margin-right: 10px;
+  margin-left: auto;
+  border: 1px solid red;
+}
+#publicidad {
+  height: 100px;
+  display: flex;
+  width: 80%;
+  margin: 30px auto;
+  border-radius: 3px;
+  background-color: #eec170;
+  color: #ff9f1c;
+}
+#textoPublicidad {
+  margin: 30px auto;
+}
+#pieDePagina {
+  height: 80px;
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #5b3924;
+  color: #ff9f1c;
+}
+#textoPieDePagina {
+  margin: 30px auto;
+}
